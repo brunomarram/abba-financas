@@ -4,7 +4,7 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 import Loading from '../components/base/Loading';
 import ErrorMessage from '../components/base/ErrorMessage';
-import Highlight from '../components/base/Highlight';
+import Highlight from '../components/home/Highlight';
 
 function External() {
   const [state, setState] = useState({ isLoading: false, response: undefined, error: undefined });
