@@ -1,12 +1,13 @@
 import React from 'react';
-import { UserProvider } from '@auth0/nextjs-auth0';
+import { UserProvider, useUser } from '@auth0/nextjs-auth0';
 
-import Layout from '../components/Layout';
+import Layout from '../components/base/Layout';
 
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import initFontAwesome from '../utils/initFontAwesome';
 
 import '../styles/base.css';
+import 'antd/dist/antd.css';
 
 initFontAwesome();
 

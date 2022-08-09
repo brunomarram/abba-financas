@@ -2,9 +2,9 @@ import React from 'react';
 import { Row, Col } from 'reactstrap';
 import { useUser, withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-import Loading from '../components/Loading';
-import ErrorMessage from '../components/ErrorMessage';
-import Highlight from '../components/Highlight';
+import Loading from '../components/base/Loading';
+import ErrorMessage from '../components/base/ErrorMessage';
+import Highlight from '../components/home/Highlight';
 
 function Profile() {
   const { user, isLoading } = useUser();

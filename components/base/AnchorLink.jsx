@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBarItem from './NavBarItem';
+import NavBarItem from '../home/NavBarItem';
 
 const AnchorLink = ({ children, href, className, icon, tabIndex, testId }) => {
   return (

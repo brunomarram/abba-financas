@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Logo from './Logo';
+import Logo from '../base/Logo';
 
 const Hero = () => (
   <div className="hero my-5 text-center" data-testid="hero">

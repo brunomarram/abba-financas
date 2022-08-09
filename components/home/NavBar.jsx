@@ -15,7 +15,7 @@ import {
 import { useUser } from '@auth0/nextjs-auth0';
 
 import PageLink from './PageLink';
-import AnchorLink from './AnchorLink';
+import AnchorLink from '../base/AnchorLink';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,25 +32,6 @@ const NavBar = () => {
           <NavbarToggler onClick={toggle} data-testid="navbar-toggle" />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar data-testid="navbar-items">
-              {user && (
-                <>
-                  <NavItem>
-                    <PageLink href="/csr" className="nav-link" testId="navbar-csr">
-                      Client-side rendered page
-                    </PageLink>
-                  </NavItem>
-                  <NavItem>
-                    <PageLink href="/ssr" className="nav-link" testId="navbar-ssr">
-                      Server-side rendered page
-                    </PageLink>
-                  </NavItem>
-                  <NavItem>
-                    <PageLink href="/external" className="nav-link" testId="navbar-external">
-                      External API
-                    </PageLink>
-                  </NavItem>
-                </>
-              )}
             </Nav>
             <Nav className="d-none d-md-block" navbar>
               {!isLoading && !user && (
