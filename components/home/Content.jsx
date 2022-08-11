@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import contentData from '../../utils/contentData';
 
@@ -14,7 +13,6 @@ const Content = () => (
         <Col key={i} md={5} className="mb-4">
           <h6 className="mb-3">
             <a href={col.link}>
-              <FontAwesomeIcon icon="paperclip" className="mr-2" />
               {col.title}
             </a>
           </h6>

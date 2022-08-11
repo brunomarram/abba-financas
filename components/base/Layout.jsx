@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container } from 'reactstrap';
-import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import NavBar from '../home/NavBar';
 import Footer from '../home/Footer';
 import { useUser } from '@auth0/nextjs-auth0';
 
-import { Button, Layout as AntdLayout, notification } from 'antd';
+import { Layout as AntdLayout, notification } from 'antd';
 import SiderMenu from './Sider';
 import HeaderMenu from './Header';
 
@@ -17,14 +16,9 @@ import { NotificationContext } from '../../utils/notificationContext';
 const { Content } = AntdLayout;
 
 const Layout = ({ children }) => {
-  const router = useRouter()
   const { user, isLoading } = useUser();
   const [collapsed, setCollapsed] = useState(false);
   const [api, contextHolder] = notification.useNotification();
-
-  useEffect(() => {
-    if (user) router.push('/home')
-  }, [user])
 
   const openNotification = (title, message, type = 'info') => {
     api[type]({
