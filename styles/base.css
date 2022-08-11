@@ -393,6 +393,31 @@ p code {
 .site-layout .site-layout-background {
 	background: #fff;
 	padding: 1rem;
+}
+
+.site-layout .site-header {
+	background: var(--white);
+	padding: 1rem;
 	display: flex;
 	justify-content: space-between;
+}
+
+.user-menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.user-menu:last-child {
+	margin-left: 1rem;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.value-with-menu {
+	display: flex;
+	align-items: flex-end;
 }
