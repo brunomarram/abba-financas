@@ -6,8 +6,8 @@ import { ArrowUpOutlined } from '@ant-design/icons';
 const Metrics = ({ metrics }) => {
     return (
         <>
-            {metrics.map((metric) =>
-                <Col span={6}>
+            {metrics.map((metric, key) =>
+                <Col span={6} key={key}>
                     <Statistic
                         title={metric.title}
                         value={metric.value}

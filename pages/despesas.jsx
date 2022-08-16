@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 import { PlusOutlined } from '@ant-design/icons';
@@ -7,6 +7,7 @@ import { Divider, Row, Col, Typography, Tooltip, Button } from 'antd';
 import { NotificationContext } from '../utils/notificationContext';
 import Metrics from '../components/despesas/Metrics';
 import DataList from '../components/despesas/DataList';
+import FormData from '../components/despesas/FormData';
 
 const expenses = [
     'Racing car sprays burning fuel into crowd.',
@@ -20,6 +21,7 @@ const { Title } = Typography;
 
 export default withPageAuthRequired(function SSRPage() {
     const { openNotification } = useContext(NotificationContext);
+    const [openFormData, setOpenFormData] = useState(false);
 
     const metrics = [
         { title: 'Total', value: 1123.8, type: 'currency', showArrow: true },
@@ -35,7 +37,7 @@ export default withPageAuthRequired(function SSRPage() {
             </Col>
             <Col span={1}>
                 <Tooltip title="Nova Despesa">
-                    <Button type="primary" shape="circle" icon={<PlusOutlined />} onClick={() => openNotification('Aê imbecil', 'funcionou essa bosta', 'success')} />
+                    <Button type="primary" shape="circle" icon={<PlusOutlined />} onClick={() => setOpenFormData(true)} />
                 </Tooltip>
             </Col>
             <Metrics metrics={metrics}/>
@@ -43,6 +45,7 @@ export default withPageAuthRequired(function SSRPage() {
                 <Divider orientation="left">Últimas despesas</Divider>
                 <DataList expenses={expenses}/>
             </Col>
+            <FormData closeModal={() => setOpenFormData(false)} openFormData={openFormData} openNotification={openNotification}/>
         </Row>
     );
 });
