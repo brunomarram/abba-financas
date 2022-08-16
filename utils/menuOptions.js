@@ -37,7 +37,8 @@ const menu = [
     {
         key: '4',
         icon: <BankOutlined />,
-        label: 'Contas'
+        label: 'Contas',
+        path: '/contas'
     },
     {
         key: '5',
